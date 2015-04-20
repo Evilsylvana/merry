@@ -37,6 +37,7 @@ build()
 deploy()
 {
     killall java
+    rm -rf $HOME/webapps/*
     echo $HOME
     cp target/*.war $HOME/webapps
     sh /alidata/server/tomcat-7.0.54/bin/catalina.sh start
