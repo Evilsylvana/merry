@@ -1,149 +1,74 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
 <head>
 <meta charset="utf-8">
-<meta name="author" content="hahnzhu" />
-<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
-	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style"
-	content="black-translucent" />
-<title>Demo</title>
-<link rel="stylesheet" href="css/parallax.css">
-<link rel="stylesheet" href="css/parallax-animation.css">
-<style>
-/* custom */
-section[data-id="1"] {
-	background-color: #3498db;
-}
-
-section[data-id="2"] {
-	background-color: #40d47e;
-}
-
-section[data-id="3"] {
-	background-color: #ff8c81;
-}
-
-section[data-id="4"] {
-	background-color: #3498db;
-}
-
-.big_img {
-	width: 100px;
-	height: 200px;
-}
-
-.box1 {
-	width: 100px;
-	height: 200px;
-	background-color: #ecf0f1;
-	position: absolute;
-	left: 160px;
-	top: 126px;
-}
-
-.box2 {
-	width: 200px;
-	height: 100px;
-	background-color: #8e44ad;
-	position: absolute;
-	left: 60px;
-	top: 226px;
-}
-
-.box3 {
-	width: 100px;
-	height: 100px;
-	background-color: #34495e;
-	position: absolute;
-	left: 160px;
-	top: 226px;
-}
-
-.box4 {
-	width: 50px;
-	height: 50px;
-	background-color: #e74c3c;
-	position: absolute;
-	left: 185px;
-	top: 250px;
-}
-</style>
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta content="telephone=no" name="format-detection" />
+<title>胡炫==徐佳佳</title>
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/modernizr-2.6.2.min.js"></script>
 </head>
+
 <body>
-	<div class="wrapper">
-		<div class="pages">
 
-			<!-- 第一屏 -->
-			<section class="page">
-				<div class="box1" data-animation="slideToBottom"
-					data-timing-function="ease-in"></div>
-				<div class="box2" data-animation="slideToTop" data-delay="300"
-					data-timing-function="ease-out"></div>
-				<div class="box3" data-animation="slideToRight" data-delay="600"
-					data-timing-function="linear"></div>
-				<div class="box4" data-animation="slideToLeft" data-delay="900"
-					data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
-			</section>
-
-			<!-- 第二屏 -->
-			<section class="page">
-				<h2></h2>
-				<div class="box1" data-animation="followSlide" data-duration="1000"></div>
-				<div class="box2" data-animation="followSlide" data-delay="200"
-					data-duration="1000"></div>
-				<div class="box3" data-animation="followSlide" data-delay="400"
-					data-duration="1000"></div>
-				<div class="box4" data-animation="followSlide" data-delay="600"
-					data-duration="1000"></div>
-			</section>
-
-			<!-- 第三屏 -->
-			<section class="page">
-				<div class="box1" data-animation="fadeInToBottom"></div>
-				<div class="box2" data-animation="fadeInToTop" data-delay="200"></div>
-				<div class="box3" data-animation="fadeInToLeft" data-delay="400"></div>
-				<div class="box4" data-animation="fadeInToRight" data-delay="600"></div>
-			</section>
-
-			<!-- 第四屏 -->
-			<section class="page">
-				<div class="box1" data-animation="fadeIn"></div>
-				<div class="box2" data-animation="fadeOut" data-delay="800"></div>
-			</section>
-
+	<div class="loading">
+		<div class="spinner">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
 		</div>
 	</div>
-	<script src="js/zepto.min.js"></script>
-	<script src="js/parallax.js"></script>
-	<script>
-		$('.pages').parallax({
-			direction : 'vertical', // horizontal (水平翻页)
-			swipeAnim : 'default', // cover (切换效果)
-			drag : true, // 是否允许拖拽 (若 false 则只有在 touchend 之后才会翻页)
-			loading : false, // 有无加载页
-			indicator : true, // 有无指示点
-			arrow : true, // 有无指示箭头
-			/*
-			 * 翻页后立即执行
-			 * {int} 		index: 第几页
-			 * {DOMElement} element: 当前页节点
-			 * {String}		directation: forward(前翻)、backward(后翻)、stay(保持原页)
-			 */
-			onchange : function(index, element, direction) {
-				// code here...
-				// console.log(index, element, direction);
-			},
-			/*
-			 * 横竖屏检测
-			 * {String}		orientation: landscape、protrait
-			 */
-			orientationchange : function(orientation) {
-				// console.log(orientation);
-			}
-		});
-	</script>
+
+	<div class="container">
+		<div id="fullpage">
+			<div class="music-control play">
+				<p class="music-state">开启</p>
+				<span class="music-icon"></span>
+			</div>
+			<div class="swipe-tip">
+				<p></p>
+			</div>
+
+			<!-- 首页 -->
+			<div class="section" id="section1">
+				<h1>
+					<a href="https://github.com/cody1991/fullpage">点击查看项目主页</a>
+				</h1>
+			</div>
+
+
+			<div class="section" id="section2">
+				<div class="slide" id="slide1">
+					<h1>左右滑动 slide1</h1>
+				</div>
+				<div class="slide" id="slide2">
+					<h1>左右滑动 slide2</h1>
+				</div>
+				<div class="slide" id="slide3">
+					<h1>左右滑动 slide3</h1>
+				</div>
+			</div>
+
+			<div class="section" id="section3">
+				<h1>O(∩_∩)O谢谢</h1>
+			</div>
+			<audio src="music/love.mp3" id="bgm"></audio>
+		</div>
+	</div>
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/jquery.easings.min.js"></script>
+	<script src="js/jquery.fullPage.min.js"></script>
+	<script src="js/common.js"></script>
 </body>
+
 </html>
