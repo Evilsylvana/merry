@@ -375,19 +375,19 @@ body {
 }
 #section2 #slide2 {
     background: url(../images/2.JPG) no-repeat center center #000;
-    background-size: 100% auto;
+    background-size: auto 100%;
 }
 #section2 #slide3 {
     background: url(../images/3.JPG) no-repeat center center #000;
-    background-size: 100% auto;
+    background-size: auto 100%;
 }
 #section2 #slide4 {
     background: url(../images/4.JPG) no-repeat center center #000;
-    background-size: 100% auto;
+    background-size: auto 100%;
 }
 #section2 #slide5 {
     background: url(../images/5.JPG) no-repeat center center #000;
-    background-size: 100% auto;
+    background-size: auto 100%;
 }
 #section2 #slide6 {
     background: url(../images/6.JPG) no-repeat center center #000;
