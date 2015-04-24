@@ -363,7 +363,7 @@ body {
     display: none;
 }
 #section1 {
-    background: url(../images/6.JPG);
+    background: url(../images/home.JPG);
     background-size: 100% auto;
 	background-repeat:no-repeat;
 	background-position:center;
@@ -391,6 +391,11 @@ body {
 }
 #section2 #slide6 {
     background: url(../images/6.JPG) no-repeat center center #000;
+    background-size: 100% auto;
+}
+
+#section2 #slide7 {
+    background: url(../images/7.JPG) no-repeat center center #000;
     background-size: 100% auto;
 }
 
