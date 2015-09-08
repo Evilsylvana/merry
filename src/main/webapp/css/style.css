@@ -453,7 +453,7 @@ audio {
 .section .slideInLeft { -webkit-animation-name: slideInLeft; animation-name: slideInLeft; }
 .tit table {margin:0 auto;color:#fff;font-style:normal;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
 #ta_0map .tit,#ta_0words .tit{background:url('../images/tit.jpg');padding:10% 0;background-size:100%;}
-#maparea{width:90%;margin:20px auto;position:relative;border-radius:5px;-webkit-border-radius:5px;}
+#maparea{width:90%;margin:10px auto;position:relative;border-radius:5px;-webkit-border-radius:5px;}
 #maparea img{width:100%;border-radius:5px;-webkit-border-radius:5px;}
 .hinfo{width:90%;margin:0 auto;padding-bottom:50px;  margin-top: -15px;}
 .hinfo p{height:44px;font-size:16px;color:#fff;line-height:44px;background:url("../images/icon.png") no-repeat #4BC7C7;margin-bottom:14px;text-indent:60px;overflow:hidden;border-radius:5px;-webkit-border-radius:5px;}
