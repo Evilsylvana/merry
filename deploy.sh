@@ -39,7 +39,7 @@ deploy()
     killall java
     rm -rf $HOME/webapps/*
     echo $HOME
-    cp -r target/merry/* $HOME/webapps
+    cp target/*.war $HOME/webapps
     sh /alidata/server/tomcat-7.0.54/bin/catalina.sh start
     if [ $? -eq 0 ]; then
    	 echo 'Static files deploy SUCCESS!'
