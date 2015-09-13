@@ -18,17 +18,37 @@
 <meta content="telephone=no" name="format-detection" />
 <%
     Wedding wedding = (Wedding) request.getAttribute("wedding");
-    Calendar calendar = wedding.getStartTime();
+			Calendar calendar = wedding.getStartTime();
 %>
 <title><%=wedding.getTitle()%></title>
 <link rel="stylesheet" type="text/css" href="css/normalize.css">
 <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <script src="js/modernizr-2.6.2.min.js"></script>
+<script src="js/jweixin-1.0.0.js"></script>
+
+<script type="text/javascript">
+wx.ready(function () {   //ready函数用于调用API，如果你的网页在加载后就需要自定义分享和回调功能，需要在此调用分享函数。//如果是微信游戏结束后，需要点击按钮触发得到分值后分享，这里就不需要调用API了，可以在按钮上绑定事件直接调用。因此，微信游戏由于大多需要用户先触发获取分值，此处请不要填写如下所示的分享API
+	wx.onMenuShareTimeline({  //例如分享到朋友圈的API  
+	   title: '', // 分享标题
+	   link: '', // 分享链接
+	   imgUrl: '', // 分享图标
+	   success: function () {
+	       // 用户确认分享后执行的回调函数
+	   },
+	   cancel: function () {
+	       // 用户取消分享后执行的回调函数
+	   }
+	});
+	});
+	wx.error(function (res) {
+	 alert(res.errMsg);  //打印错误消息。及把 debug:false,设置为debug:ture就可以直接在网页上看到弹出的错误提示
+	});
+</script>
 </head>
 
 <body>
-
+	<div style="display:none"> <img src="http://evilsylvana-photo.oss-cn-shenzhen.aliyuncs.com/7.jpg" /> </div>
 	<div class="loading">
 		<div class="spinner">
 			<div class="bounce1"></div>
@@ -80,8 +100,9 @@
 													<td style="font-size: 24px" align="left" height="30"><%=calendar.get(Calendar.MONTH) + 1%>月</td>
 												</tr>
 												<tr>
-													<td colspan="2" style="font-size: 24px" align="left"><%=String.format("%02d:%02d", calendar.get(Calendar.HOUR_OF_DAY),
-                calendar.get(Calendar.MINUTE))%>PM</td>
+													<td colspan="2" style="font-size: 24px" align="left"><%=String.format("%02d:%02d",
+					calendar.get(Calendar.HOUR_OF_DAY),
+					calendar.get(Calendar.MINUTE))%>PM</td>
 												</tr>
 											</tbody>
 										</table>
