@@ -104,10 +104,10 @@
 						<a href="<%=wedding.getLocationBaiDuUrl()%>" title="点击一键导航">点击一键导航</a>
 					</p>
 					<p class="phone">
-						<a href="tel:<%=wedding.getBridePhone()%>">新娘电话：<%=wedding.getBridePhone()%></a>
+						<a href="tel:<%=wedding.getBridePhone()%>">新郎电话：<%=wedding.getBridegroomPhone()%></a>
 					</p>
 					<p class="phone">
-						<a href="tel:<%=wedding.getBridePhone()%>">新郎电话：<%=wedding.getBridegroomPhone()%></a>
+						<a href="tel:<%=wedding.getBridePhone()%>">新娘电话：<%=wedding.getBridePhone()%></a>
 					</p>
 				</div>
 			</div>
