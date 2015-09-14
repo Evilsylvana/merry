@@ -37,6 +37,7 @@ public class HomeServlet extends HttpServlet {
                                                                            throws ServletException,
                                                                            IOException {
         req.setAttribute("wedding", HomeHandle.getWedding());
+        req.setAttribute("wxShare", HomeHandle.getWxShare(req));
         req.getRequestDispatcher("/home.jsp").forward(req, resp);
     }
 }

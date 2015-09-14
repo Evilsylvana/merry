@@ -3,6 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
+<%@page import="com.xuanjia.merry.model.WxShare"%>
 <%@page import="java.util.Calendar"%>
 <%@page import="java.util.Date"%>
 <%@page language="java" pageEncoding="utf-8"%>
@@ -18,7 +19,8 @@
 <meta content="telephone=no" name="format-detection" />
 <%
     Wedding wedding = (Wedding) request.getAttribute("wedding");
-			Calendar calendar = wedding.getStartTime();
+	Calendar calendar = wedding.getStartTime();
+	WxShare wxShare = (WxShare) request.getAttribute("wxShare");
 %>
 <title><%=wedding.getTitle()%></title>
 <link rel="stylesheet" type="text/css" href="css/normalize.css">
@@ -26,7 +28,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <script src="js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="js/zepto.min.js"></script>
-<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="js/weixin.js"></script>
 
 </head>
 
@@ -124,10 +126,10 @@
 <script type="text/javascript">
 	wx.config({
     debug: true,
-    appId: 'wx9cb74cfd2fae68ca',
-    timestamp: 1442227294,
-    nonceStr: 'Wm3WZYTPz0wzccnW',
-    signature: '212687b40470214eb3c6153d0d739e64d26467a4',
+    appId: '<%=wxShare.getWxAppId() %>',
+    timestamp: <%=wxShare.getSignTimestamp() %>,
+    nonceStr: '<%=wxShare.getNonceStr() %>',
+    signature: '<%=wxShare.getSignature() %>',
     jsApiList: [
       'checkJsApi',
       'onMenuShareTimeline',
@@ -143,7 +145,10 @@
 		wx.checkJsApi({
 		    jsApiList: [
 		                'onMenuShareAppMessage', 
-		                'onMenuShareTimeline'
+		                'onMenuShareTimeline',
+		                'onMenuShareQQ',
+		                'onMenuShareWeibo',
+		                'onMenuShareQZone'
 		               ], // 需要检测的JS接口列表，所有JS接口列表见附录2,
 		    success: function(res) {
 		        // 以键值对的形式返回，可用的api值true，不可用为false
@@ -153,13 +158,12 @@
 		});
 	
 	    wx.onMenuShareAppMessage({
-	        title: '胡炫徐佳佳婚礼邀请', // 分享标题
-	        desc: '微信JS-SDK,帮助第三方为用户提供更优质的移动web服务', // 分享描述
-	        link: 'http://www.xuanjia2015.com/merry/wedding.do', // 分享链接
-	        imgUrl: 'http://evilsylvana-photo.oss-cn-shenzhen.aliyuncs.com/9.jpg', // 分享图标
+	        title: '<%=wxShare.getShareTitle()%>', // 分享标题
+	        desc: '<%=wxShare.getShareDesc() %>', // 分享描述
+	        link: '<%=wxShare.getShareLink() %>', // 分享链接
+	        imgUrl: '<%=wxShare.getSharePic() %>', // 分享图标
 	        success: function () {
 	            // 用户确认分享后执行的回调函数
-	        	alert("share ok");
 	        },
 	        cancel: function () { 
 	            // 用户取消分享后执行的回调函数
@@ -169,13 +173,6 @@
 	        }
 	    });
 	});
-    var shareData = {
-		    title: '胡炫徐佳佳婚礼邀请',
-		    desc: '微信JS-SDK,帮助第三方为用户提供更优质的移动web服务',
-		    link: 'http://www.xuanjia2015.com/merry/wedding.do',
-		    imgUrl: 'http://evilsylvana-photo.oss-cn-shenzhen.aliyuncs.com/9.jpg'
-	};
-    wx.onMenuShareAppMessage(shareData);
     wx.error(function (res) {
    		alert(res.errMsg);
    	});
