@@ -138,7 +138,10 @@
     ]
 	});
 	wx.checkJsApi({
-	    jsApiList: ['onMenuShareAppMessage'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+	    jsApiList: [
+	                'onMenuShareAppMessage', 
+	                'onMenuShareTimeline'
+	               ], // 需要检测的JS接口列表，所有JS接口列表见附录2,
 	    success: function(res) {
 	        // 以键值对的形式返回，可用的api值true，不可用为false
 	        // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
@@ -151,6 +154,19 @@
 	    link: 'http://www.xuanjia2015.com/merry/wedding.do',
 	    imgUrl: 'http://evilsylvana-photo.oss-cn-shenzhen.aliyuncs.com/9.jpg'
 	};
-    wx.onMenuShareAppMessage(shareData);
+    
+    wx.onMenuShareAppMessage({
+        title: '胡炫徐佳佳婚礼邀请', // 分享标题
+        desc: '微信JS-SDK,帮助第三方为用户提供更优质的移动web服务', // 分享描述
+        link: 'http://www.xuanjia2015.com/merry/wedding.do', // 分享链接
+        imgUrl: 'http://evilsylvana-photo.oss-cn-shenzhen.aliyuncs.com/9.jpg', // 分享图标
+        success: function () { 
+            // 用户确认分享后执行的回调函数
+        	alert("share ok");
+        },
+        cancel: function () { 
+            // 用户取消分享后执行的回调函数
+        }
+    });
 </script>
 </html>
