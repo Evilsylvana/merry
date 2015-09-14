@@ -172,5 +172,9 @@
             alert(JSON.stringify(res));
         }
     });
+    
+    wx.error(function (res) {
+   		alert(res.errMsg);
+   	});
 </script>
 </html>
