@@ -125,9 +125,9 @@
 	wx.config({
     debug: true,
     appId: 'wx9cb74cfd2fae68ca',
-    timestamp: 1442217018,
+    timestamp: 1442227294,
     nonceStr: 'Wm3WZYTPz0wzccnW',
-    signature: '032b6307cac6b1c403fc4ca696abb95171793505',
+    signature: '68cdd2d7383d1556dd08d20cdd0e0bcb9afe88fa',
     jsApiList: [
       'checkJsApi',
       'onMenuShareTimeline',
