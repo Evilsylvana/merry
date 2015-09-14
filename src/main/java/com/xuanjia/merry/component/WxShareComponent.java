@@ -59,12 +59,12 @@ public class WxShareComponent {
         }
         String nonce_str = create_nonce_str();
         String timestamp = create_timestamp();
-        
+
         InitWedding.wxShare.setNonceStr(nonce_str);
 
         InitWedding.wxShare.setSignTimestamp(timestamp);
 
-        String resource = "jsapi_ticket=" + InitWedding.wxShare.getSignature() + "&noncestr="
+        String resource = "jsapi_ticket=" + InitWedding.wxShare.getWxTicket() + "&noncestr="
                           + nonce_str + "&timestamp=" + timestamp + "&url=" + url;
         String target = DigestUtils.sha1Hex(resource);
         InitWedding.wxShare.setSignature(target);
