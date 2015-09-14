@@ -28,6 +28,7 @@
 <script type="text/javascript" src="js/jweixin-1.0.0.js"></script>
 <script type="text/javascript" src="js/zepto.min.js"></script>
 <script type="text/javascript" src="js/weixin.js"></script>
+<script type="text/javascript" src="js/weixin-api.js"></script>
 
 <script type="text/javascript">
     var shareData = {
