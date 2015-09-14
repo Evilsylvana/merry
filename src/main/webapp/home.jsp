@@ -152,13 +152,6 @@
 		    }
 		});
 	
-	    var shareData = {
-		    title: '胡炫徐佳佳婚礼邀请',
-		    desc: '微信JS-SDK,帮助第三方为用户提供更优质的移动web服务',
-		    link: 'http://www.xuanjia2015.com/merry/wedding.do',
-		    imgUrl: 'http://evilsylvana-photo.oss-cn-shenzhen.aliyuncs.com/9.jpg'
-		};
-	    
 	    wx.onMenuShareAppMessage({
 	        title: '胡炫徐佳佳婚礼邀请', // 分享标题
 	        desc: '微信JS-SDK,帮助第三方为用户提供更优质的移动web服务', // 分享描述
@@ -176,6 +169,13 @@
 	        }
 	    });
 	});
+    var shareData = {
+		    title: '胡炫徐佳佳婚礼邀请',
+		    desc: '微信JS-SDK,帮助第三方为用户提供更优质的移动web服务',
+		    link: 'http://www.xuanjia2015.com/merry/wedding.do',
+		    imgUrl: 'http://evilsylvana-photo.oss-cn-shenzhen.aliyuncs.com/9.jpg'
+	};
+    wx.onMenuShareAppMessage(shareData);
     wx.error(function (res) {
    		alert(res.errMsg);
    	});
