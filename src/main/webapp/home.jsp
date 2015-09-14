@@ -29,7 +29,63 @@
 <script src="js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="js/zepto.min.js"></script>
 <script src="js/weixin.js"></script>
-
+<script type="text/javascript">
+	wx.config({
+    debug: true,
+    appId: '<%=wxShare.getWxAppId() %>',
+    timestamp: <%=wxShare.getSignTimestamp() %>,
+    nonceStr: '<%=wxShare.getNonceStr() %>',
+    signature: '<%=wxShare.getSignature() %>',
+    jsApiList: [
+      'checkJsApi',
+      'onMenuShareTimeline',
+      'onMenuShareAppMessage',
+      'onMenuShareQQ',
+      'onMenuShareWeibo',
+      'onMenuShareQZone'
+    ]
+	});
+	
+	wx.ready(function () {
+		  // 1 判断当前版本是否支持指定 JS 接口，支持批量判断
+		wx.checkJsApi({
+		    jsApiList: [
+		                'onMenuShareAppMessage', 
+		                'onMenuShareTimeline',
+		                'onMenuShareQQ',
+		                'onMenuShareWeibo',
+		                'onMenuShareQZone'
+		               ], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+		    success: function(res) {
+		        // 以键值对的形式返回，可用的api值true，不可用为false
+		        // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+		    	alert("checkUrl:" + JSON.stringify(res));
+		    }
+		});
+	
+	    wx.onMenuShareAppMessage({
+	        title: '<%=wxShare.getShareTitle()%>', // 分享标题
+	        desc: '<%=wxShare.getShareDesc() %>', // 分享描述
+	        link: '<%=wxShare.getShareLink() %>', // 分享链接
+	        imgUrl: '<%=wxShare.getSharePic() %>', // 分享图标
+	        success: function () {
+	            // 用户确认分享后执行的回调函数
+	        	alert("share ok");
+	        },
+	        cancel: function () { 
+	            // 用户取消分享后执行的回调函数
+	        },
+	        fail: function (res) {
+	            alert(JSON.stringify(res));
+	        }
+	    });
+	});
+	
+	
+    wx.error(function (res) {
+   		alert(res.errMsg);
+   	});
+</script>
 </head>
 
 <body>
@@ -123,59 +179,14 @@
 	<script src="js/jquery.fullPage.min.js"></script>
 	<script src="js/common.js"></script>
 </body>
+
 <script type="text/javascript">
-	wx.config({
-    debug: true,
-    appId: '<%=wxShare.getWxAppId() %>',
-    timestamp: <%=wxShare.getSignTimestamp() %>,
-    nonceStr: '<%=wxShare.getNonceStr() %>',
-    signature: '<%=wxShare.getSignature() %>',
-    jsApiList: [
-      'checkJsApi',
-      'onMenuShareTimeline',
-      'onMenuShareAppMessage',
-      'onMenuShareQQ',
-      'onMenuShareWeibo',
-      'onMenuShareQZone'
-    ]
-	});
-	
-	wx.ready(function () {
-		  // 1 判断当前版本是否支持指定 JS 接口，支持批量判断
-		wx.checkJsApi({
-		    jsApiList: [
-		                'onMenuShareAppMessage', 
-		                'onMenuShareTimeline',
-		                'onMenuShareQQ',
-		                'onMenuShareWeibo',
-		                'onMenuShareQZone'
-		               ], // 需要检测的JS接口列表，所有JS接口列表见附录2,
-		    success: function(res) {
-		        // 以键值对的形式返回，可用的api值true，不可用为false
-		        // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
-		    	alert("checkUrl:" + JSON.stringify(res));
-		    }
-		});
-	
-	    wx.onMenuShareAppMessage({
-	        title: '<%=wxShare.getShareTitle()%>', // 分享标题
+	var shareData = {
+			title: '<%=wxShare.getShareTitle()%>', // 分享标题
 	        desc: '<%=wxShare.getShareDesc() %>', // 分享描述
 	        link: '<%=wxShare.getShareLink() %>', // 分享链接
-	        imgUrl: '<%=wxShare.getSharePic() %>', // 分享图标
-	        success: function () {
-	            // 用户确认分享后执行的回调函数
-	        	alert("share ok");
-	        },
-	        cancel: function () { 
-	            // 用户取消分享后执行的回调函数
-	        },
-	        fail: function (res) {
-	            alert(JSON.stringify(res));
-	        }
-	    });
-	});
-    wx.error(function (res) {
-   		alert(res.errMsg);
-   	});
+	        imgUrl: '<%=wxShare.getSharePic() %>' // 分享图标
+	};
+	wx.onMenuShareAppMessage(shareData);
 </script>
 </html>
