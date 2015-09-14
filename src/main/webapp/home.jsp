@@ -26,7 +26,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <script src="js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="js/zepto.min.js"></script>
-<script type="text/javascript" src="js/weixin.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 
 </head>
 
@@ -160,7 +160,7 @@
         desc: '微信JS-SDK,帮助第三方为用户提供更优质的移动web服务', // 分享描述
         link: 'http://www.xuanjia2015.com/merry/wedding.do', // 分享链接
         imgUrl: 'http://evilsylvana-photo.oss-cn-shenzhen.aliyuncs.com/9.jpg', // 分享图标
-        success: function () { 
+        success: function () {
             // 用户确认分享后执行的回调函数
         	alert("share ok");
         },
