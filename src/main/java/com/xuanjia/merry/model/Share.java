@@ -1,6 +1,6 @@
 package com.xuanjia.merry.model;
 
-import java.io.Serializable;
+import com.xuanjia.merry.utils.ToString;
 
 /**
  * ·ÖÏí
@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @author huxuan.hx
  * @version $Id: Share.java, v 0.1 2015-9-14 ÏÂÎç9:25:29 huxuan.hx Exp $
  */
-public class Share implements Serializable {
+public class Share extends ToString {
     /**  */
     private static final long serialVersionUID = 8739047452386468262L;
 

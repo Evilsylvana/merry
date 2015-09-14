@@ -32,6 +32,7 @@ public class HomeHandle {
                                                                        + (request.getQueryString())); //²ÎÊý 
         logger.info(strBackUrl);
         WxShareComponent.signature(strBackUrl);
+        logger.info(InitWedding.wxShare.toString());
         return share;
     }
 }
