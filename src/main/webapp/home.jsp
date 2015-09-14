@@ -164,6 +164,7 @@
 	        imgUrl: '<%=wxShare.getSharePic() %>', // 分享图标
 	        success: function () {
 	            // 用户确认分享后执行的回调函数
+	        	alert("share ok");
 	        },
 	        cancel: function () { 
 	            // 用户取消分享后执行的回调函数
