@@ -2,6 +2,9 @@ package com.xuanjia.merry.handle;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.xuanjia.merry.component.WxShareComponent;
 import com.xuanjia.merry.init.InitWedding;
 import com.xuanjia.merry.model.Wedding;
@@ -14,6 +17,8 @@ import com.xuanjia.merry.model.WxShare;
  */
 public class HomeHandle {
 
+    private static Logger logger = LoggerFactory.getLogger(HomeHandle.class);
+
     public static Wedding getWedding() {
         return InitWedding.getWedding();
     }
@@ -25,6 +30,7 @@ public class HomeHandle {
                             + request.getRequestURI() //项目名称  
                             + (request.getQueryString() == null ? "" : "?"
                                                                        + (request.getQueryString())); //参数 
+        logger.info(strBackUrl);
         WxShareComponent.signature(strBackUrl);
         return share;
     }
