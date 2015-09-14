@@ -34,6 +34,8 @@ public class WxShare extends Share {
 
     private String            signTimestamp;
 
+    private String            host;
+
     public String getToken() {
         return token;
     }
@@ -96,5 +98,13 @@ public class WxShare extends Share {
 
     public void setSignTimestamp(String signTimestamp) {
         this.signTimestamp = signTimestamp;
+    }
+
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
     }
 }

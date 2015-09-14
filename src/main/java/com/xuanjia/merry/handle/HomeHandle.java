@@ -26,12 +26,12 @@ public class HomeHandle {
     public static WxShare getWxShare(HttpServletRequest request) {
         WxShare share = InitWedding.wxShare;
         String strBackUrl = request.getScheme() + "://"
-                            + request.getHeader("host") //服务器地址  
+                            + InitWedding.wxShare.getHost() //服务器地址  
                             + request.getRequestURI() //项目名称  
                             + (request.getQueryString() == null ? "" : "?"
                                                                        + (request.getQueryString())); //参数 
         logger.info(strBackUrl);
-        WxShareComponent.signature(strBackUrl);
+        //        WxShareComponent.signature(strBackUrl);
         return share;
     }
 }

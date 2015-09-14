@@ -84,6 +84,7 @@ public class InitWedding {
         wxShare.setShareLink(ReadProperties.getValue(wxConfig, Contants.SHARE_LINK));
         wxShare.setWxAppId(ReadProperties.getValue(wxConfig, Contants.WX_APP_ID));
         wxShare.setWxAppSecret(ReadProperties.getValue(wxConfig, Contants.WX_APP_SECRET));
+        wxShare.setHost(ReadProperties.getValue(wxConfig, Contants.HOST));
     }
 
     public static Wedding getWedding() {

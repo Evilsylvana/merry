@@ -52,4 +52,6 @@ public class Contants {
     public static String WX_APP_ID                    = "app_id";
 
     public static String WX_APP_SECRET                = "app_secret";
+
+    public static String HOST                         = "host";
 }
