@@ -28,58 +28,7 @@
 <script type="text/javascript" src="js/jweixin-1.0.0.js"></script>
 <script type="text/javascript" src="js/zepto.min.js"></script>
 <script type="text/javascript" src="js/weixin.js"></script>
-<script type="text/javascript" src="js/weixin-api.js"></script>
-
-<script type="text/javascript">
-    var shareData = {
-	    title: '胡炫徐佳佳婚礼邀请',
-	    desc: '微信JS-SDK,帮助第三方为用户提供更优质的移动web服务',
-	    link: 'http://www.xuanjia2015.com/merry/wedding.do',
-	    imgUrl: 'http://evilsylvana-photo.oss-cn-shenzhen.aliyuncs.com/9.jpg'
-	};
- // 定义微信分享的数据
-    var wxData = {
-        "appId": "wx9cb74cfd2fae68ca", // 服务号可以填写appId
-        "imgUrl" : 'http://photocdn.sohu.com/20130122/Img364302298.jpg',
-        "link" : 'http://www.baidufe.com',
-        "desc" : '使用警告：此Api非官方版本，请各位尽量将分享功能迁移至腾讯官方版，会更稳定些！',
-        "title" : "欢迎使用WeixinApi"
-    };
-
-    // 分享的回调
-    var wxCallbacks = {
-        // 收藏操作是否触发回调，默认是开启的
-        favorite : false,
-
-        // 分享操作开始之前
-        ready : function() {
-            // 你可以在这里对分享的数据进行重组
-            alert("准备分享");
-        },
-        // 分享被用户自动取消
-        cancel : function(resp) {
-            // 你可以在你的页面上给用户一个小Tip，为什么要取消呢？
-            alert("分享被取消，msg=" + resp.err_msg);
-        },
-        // 分享失败了
-        fail : function(resp) {
-            // 分享失败了，是不是可以告诉用户：不要紧，可能是网络问题，一会儿再试试？
-            alert("分享失败，msg=" + resp.err_msg);
-        },
-        // 分享成功
-        confirm : function(resp) {
-            // 分享成功了，我们是不是可以做一些分享统计呢？
-            alert("分享成功，msg=" + resp.err_msg);
-        },
-        // 整个分享过程结束
-        all : function(resp,shareTo) {
-            // 如果你做的是一个鼓励用户进行分享的产品，在这里是不是可以给用户一些反馈了？
-            alert("分享" + (shareTo ? "到" + shareTo : "") + "结束，msg=" + resp.err_msg);
-        }
-    };
-    // 自定义分享到：微信好友、朋友圈、腾讯微博、QQ好友
-    WeixinApi.share(wxData,wxCallbacks);
-</script>
+<script type="text/javascript" src="js/WeixinApi.js"></script>
 
 </head>
 
@@ -174,5 +123,54 @@
 	<script src="js/jquery.fullPage.min.js"></script>
 	<script src="js/common.js"></script>
 </body>
+<script type="text/javascript">
+    var shareData = {
+	    title: '胡炫徐佳佳婚礼邀请',
+	    desc: '微信JS-SDK,帮助第三方为用户提供更优质的移动web服务',
+	    link: 'http://www.xuanjia2015.com/merry/wedding.do',
+	    imgUrl: 'http://evilsylvana-photo.oss-cn-shenzhen.aliyuncs.com/9.jpg'
+	};
+    // 定义微信分享的数据
+    var wxData = {
+        "appId": "wx9cb74cfd2fae68ca", // 服务号可以填写appId
+        "imgUrl" : 'http://photocdn.sohu.com/20130122/Img364302298.jpg',
+        "link" : 'http://www.baidufe.com',
+        "desc" : '使用警告：此Api非官方版本，请各位尽量将分享功能迁移至腾讯官方版，会更稳定些！',
+        "title" : "欢迎使用WeixinApi"
+    };
 
+    // 分享的回调
+    var wxCallbacks = {
+        // 收藏操作是否触发回调，默认是开启的
+        favorite : false,
+
+        // 分享操作开始之前
+        ready : function() {
+            // 你可以在这里对分享的数据进行重组
+            alert("准备分享");
+        },
+        // 分享被用户自动取消
+        cancel : function(resp) {
+            // 你可以在你的页面上给用户一个小Tip，为什么要取消呢？
+            alert("分享被取消，msg=" + resp.err_msg);
+        },
+        // 分享失败了
+        fail : function(resp) {
+            // 分享失败了，是不是可以告诉用户：不要紧，可能是网络问题，一会儿再试试？
+            alert("分享失败，msg=" + resp.err_msg);
+        },
+        // 分享成功
+        confirm : function(resp) {
+            // 分享成功了，我们是不是可以做一些分享统计呢？
+            alert("分享成功，msg=" + resp.err_msg);
+        },
+        // 整个分享过程结束
+        all : function(resp,shareTo) {
+            // 如果你做的是一个鼓励用户进行分享的产品，在这里是不是可以给用户一些反馈了？
+            alert("分享" + (shareTo ? "到" + shareTo : "") + "结束，msg=" + resp.err_msg);
+        }
+    };
+    // 自定义分享到：微信好友、朋友圈、腾讯微博、QQ好友
+    WeixinApi.share(wxData,wxCallbacks);
+</script>
 </html>
