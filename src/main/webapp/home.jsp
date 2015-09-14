@@ -127,7 +127,7 @@
     appId: 'wx9cb74cfd2fae68ca',
     timestamp: 1442217018,
     nonceStr: 'Wm3WZYTPz0wzccnW',
-    signature: 'e275570ad1ebb96fc88dfbb7046e4faa96b6ee62',
+    signature: '032b6307cac6b1c403fc4ca696abb95171793505',
     jsApiList: [
       'checkJsApi',
       'onMenuShareTimeline',
