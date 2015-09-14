@@ -122,6 +122,29 @@
 	<script src="js/common.js"></script>
 </body>
 <script type="text/javascript">
+	wx.config({
+    debug: true,
+    appId: 'wx9cb74cfd2fae68ca',
+    timestamp: 1442217018,
+    nonceStr: 'Wm3WZYTPz0wzccnW',
+    signature: 'e275570ad1ebb96fc88dfbb7046e4faa96b6ee62',
+    jsApiList: [
+      'checkJsApi',
+      'onMenuShareTimeline',
+      'onMenuShareAppMessage',
+      'onMenuShareQQ',
+      'onMenuShareWeibo',
+      'onMenuShareQZone'
+    ]
+	});
+	wx.checkJsApi({
+	    jsApiList: ['onMenuShareAppMessage'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+	    success: function(res) {
+	        // 以键值对的形式返回，可用的api值true，不可用为false
+	        // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+	    	alert(JSON.stringify(res));
+	    }
+	});
     var shareData = {
 	    title: '胡炫徐佳佳婚礼邀请',
 	    desc: '微信JS-SDK,帮助第三方为用户提供更优质的移动web服务',
