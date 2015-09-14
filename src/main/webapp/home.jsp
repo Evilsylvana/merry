@@ -25,6 +25,17 @@
 <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <script src="js/modernizr-2.6.2.min.js"></script>
+<script type="text/javascript" src="js/jweixin-1.0.0.js"></script>
+
+<script type="text/javascript">
+    var shareData = {
+	    title: '胡炫徐佳佳婚礼邀请',
+	    desc: '微信JS-SDK,帮助第三方为用户提供更优质的移动web服务',
+	    link: 'http://www.xuanjia2015.com/merry/wedding.do',
+	    imgUrl: 'http://evilsylvana-photo.oss-cn-shenzhen.aliyuncs.com/9.jpg'
+	};
+    wx.onMenuShareAppMessage(shareData);
+</script>
 
 </head>
 
