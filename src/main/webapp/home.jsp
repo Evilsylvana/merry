@@ -138,17 +138,22 @@
     ]
 	});
 	
-	wx.checkJsApi({
-	    jsApiList: [
-	                'onMenuShareAppMessage', 
-	                'onMenuShareTimeline'
-	               ], // 需要检测的JS接口列表，所有JS接口列表见附录2,
-	    success: function(res) {
-	        // 以键值对的形式返回，可用的api值true，不可用为false
-	        // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
-	    	alert("checkUrl:" + JSON.stringify(res));
-	    }
-	});
+	wx.ready(function () {
+		  // 1 判断当前版本是否支持指定 JS 接口，支持批量判断
+		wx.checkJsApi({
+		    jsApiList: [
+		                'onMenuShareAppMessage', 
+		                'onMenuShareTimeline'
+		               ], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+		    success: function(res) {
+		        // 以键值对的形式返回，可用的api值true，不可用为false
+		        // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+		    	alert("checkUrl:" + JSON.stringify(res));
+		    }
+		});
+  	};
+	
+	
     var shareData = {
 	    title: '胡炫徐佳佳婚礼邀请',
 	    desc: '微信JS-SDK,帮助第三方为用户提供更优质的移动web服务',
