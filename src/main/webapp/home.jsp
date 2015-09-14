@@ -26,6 +26,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <script src="js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="js/zepto.min.js"></script>
 
 <script type="text/javascript">
     var shareData = {
