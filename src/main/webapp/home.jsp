@@ -93,6 +93,9 @@
 
 <body>
 	<div style="display:none"> <img src="http://evilsylvana-photo.oss-cn-shenzhen.aliyuncs.com/9.jpg" /> </div>
+	<div style="display:none">
+		<p style="display:none"><%=wxShare.getShareDesc() %></p>
+	</div>
 	<div class="loading">
 		<div class="spinner">
 			<div class="bounce1"></div>
