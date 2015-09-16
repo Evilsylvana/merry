@@ -17,12 +17,15 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <meta content="telephone=no" name="format-detection" />
+
 <%
     Wedding wedding = (Wedding) request.getAttribute("wedding");
 	Calendar calendar = wedding.getStartTime();
 	WxShare wxShare = (WxShare) request.getAttribute("wxShare");
 %>
+<meta name="description" content="<%=wxShare.getShareDesc() %>" />
 <title><%=wedding.getTitle()%></title>
+
 <link rel="stylesheet" type="text/css" href="css/normalize.css">
 <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
