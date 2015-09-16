@@ -34,7 +34,7 @@
 <script src="js/weixin.js"></script>
 <script type="text/javascript">
 	wx.config({
-    debug: true,
+    debug: false,
     appId: '<%=wxShare.getWxAppId() %>',
     timestamp: <%=wxShare.getSignTimestamp() %>,
     nonceStr: '<%=wxShare.getNonceStr() %>',
@@ -93,9 +93,6 @@
 
 <body>
 	<div style="display:none"> <img src="http://evilsylvana-photo.oss-cn-shenzhen.aliyuncs.com/9.jpg" /> </div>
-	<div style="display:none">
-		<p style="display:none"><%=wxShare.getShareDesc() %></p>
-	</div>
 	<div class="loading">
 		<div class="spinner">
 			<div class="bounce1"></div>
