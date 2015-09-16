@@ -142,7 +142,7 @@
 												<tr>
 													<td colspan="2" style="font-size: 24px" align="left"><%=String.format("%02d:%02d",
 					calendar.get(Calendar.HOUR_OF_DAY),
-					calendar.get(Calendar.MINUTE))%>PM</td>
+					calendar.get(Calendar.MINUTE))%>AM</td>
 												</tr>
 											</tbody>
 										</table>
