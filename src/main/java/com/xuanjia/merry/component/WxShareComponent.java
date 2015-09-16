@@ -66,6 +66,8 @@ public class WxShareComponent {
 
         String resource = "jsapi_ticket=" + InitWedding.wxShare.getWxTicket() + "&noncestr="
                           + nonce_str + "&timestamp=" + timestamp + "&url=" + url;
+
+        logger.info(resource);
         String target = DigestUtils.sha1Hex(resource);
         InitWedding.wxShare.setSignature(target);
     }
